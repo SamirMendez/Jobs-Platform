@@ -1,0 +1,20 @@
+{
+  "projects": {
+    "default": "jobs-platform-a6f1d"
+  },
+  "targets": {
+    "jobs-platform-a6f1d": {
+      "hosting": {
+        "clientArea": [
+          "jobs-client"
+        ],
+        "adminArea": [
+          "jobs-platform-a6f1d"
+        ],
+        "posterArea": [
+          "jobs-poster"
+        ]
+      }
+    }
+  }
+}

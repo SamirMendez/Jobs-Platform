@@ -3,5 +3,372 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-  }
+    "provider": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "projects/provider",
+      "sourceRoot": "projects/provider/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/provider",
+            "index": "projects/provider/src/index.html",
+            "main": "projects/provider/src/main.ts",
+            "polyfills": "projects/provider/src/polyfills.ts",
+            "tsConfig": "projects/provider/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "projects/provider/src/favicon.ico",
+              "projects/provider/src/assets"
+            ],
+            "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+              "./node_modules/ngx-bootstrap/datepicker/bs-datepicker.css",
+              "./node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "projects/provider/src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/provider/src/environments/environment.ts",
+                  "with": "projects/provider/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "provider:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "provider:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "provider:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/provider/src/test.ts",
+            "polyfills": "projects/provider/src/polyfills.ts",
+            "tsConfig": "projects/provider/tsconfig.spec.json",
+            "karmaConfig": "projects/provider/karma.conf.js",
+            "assets": [
+              "projects/provider/src/favicon.ico",
+              "projects/provider/src/assets"
+            ],
+            "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+              "./node_modules/ngx-bootstrap/datepicker/bs-datepicker.css",
+              "./node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "projects/provider/src/styles.css"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/provider/tsconfig.app.json",
+              "projects/provider/tsconfig.spec.json",
+              "projects/provider/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/provider/e2e/protractor.conf.js",
+            "devServerTarget": "provider:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "provider:serve:production"
+            }
+          }
+        }
+      }
+    },
+    "client": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "projects/client",
+      "sourceRoot": "projects/client/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/client",
+            "index": "projects/client/src/index.html",
+            "main": "projects/client/src/main.ts",
+            "polyfills": "projects/client/src/polyfills.ts",
+            "tsConfig": "projects/client/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "projects/client/src/favicon.ico",
+              "projects/client/src/assets"
+            ],
+            "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+              "./node_modules/ngx-bootstrap/datepicker/bs-datepicker.css",
+              "./node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "projects/client/src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/client/src/environments/environment.ts",
+                  "with": "projects/client/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "client:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "client:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "client:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/client/src/test.ts",
+            "polyfills": "projects/client/src/polyfills.ts",
+            "tsConfig": "projects/client/tsconfig.spec.json",
+            "karmaConfig": "projects/client/karma.conf.js",
+            "assets": [
+              "projects/client/src/favicon.ico",
+              "projects/client/src/assets"
+            ],
+            "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+              "./node_modules/ngx-bootstrap/datepicker/bs-datepicker.css",
+              "./node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "projects/client/src/styles.css"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/client/tsconfig.app.json",
+              "projects/client/tsconfig.spec.json",
+              "projects/client/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/client/e2e/protractor.conf.js",
+            "devServerTarget": "client:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "client:serve:production"
+            }
+          }
+        }
+      }
+    },
+    "poster": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "projects/poster",
+      "sourceRoot": "projects/poster/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/poster",
+            "index": "projects/poster/src/index.html",
+            "main": "projects/poster/src/main.ts",
+            "polyfills": "projects/poster/src/polyfills.ts",
+            "tsConfig": "projects/poster/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "projects/poster/src/favicon.ico",
+              "projects/poster/src/assets"
+            ],
+            "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+              "./node_modules/ngx-bootstrap/datepicker/bs-datepicker.css",
+              "./node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "projects/poster/src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/poster/src/environments/environment.ts",
+                  "with": "projects/poster/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "poster:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "poster:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "poster:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/poster/src/test.ts",
+            "polyfills": "projects/poster/src/polyfills.ts",
+            "tsConfig": "projects/poster/tsconfig.spec.json",
+            "karmaConfig": "projects/poster/karma.conf.js",
+            "assets": [
+              "projects/poster/src/favicon.ico",
+              "projects/poster/src/assets"
+            ],
+            "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+              "./node_modules/ngx-bootstrap/datepicker/bs-datepicker.css",
+              "./node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "projects/poster/src/styles.css"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/poster/tsconfig.app.json",
+              "projects/poster/tsconfig.spec.json",
+              "projects/poster/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/poster/e2e/protractor.conf.js",
+            "devServerTarget": "poster:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "poster:serve:production"
+            }
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "provider"
 }

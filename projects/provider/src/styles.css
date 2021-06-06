@@ -1,0 +1,39 @@
+/* You can add global styles to this file, and also import other style files */
+html, body {
+    height: 100%;
+}
+body {
+    margin: 0;
+}
+@font-face {
+    font-family: 'Product Sans';
+    src: url('./assets/fonts/ProductSans-Regular.ttf');
+}
+*{
+    font-family: 'Product Sans', sans-serif !important;
+}
+.pointerCursor{
+    cursor: pointer !important;
+}
+.customInput{
+    width: 100%;
+    height: 55px;
+    border-radius: 0px;
+    border-style: none;
+    border-bottom: 1.5px solid #343a40;
+    background-color: transparent;
+}
+.viewIlustration{
+    width: 50%;
+    margin: auto;
+    display: block;
+    margin-top: 1vh;
+}
+.successSnack{
+    background-color: #343a40;
+    color: #e0e0e0;
+}
+.errorSnack{
+    background-color: #dc3545;
+    color: #e0e0e0;
+}

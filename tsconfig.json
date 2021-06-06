@@ -5,6 +5,12 @@
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
+    "paths": {
+      "@providerServices/*": ["projects/provider/src/app/core/services/*"],
+      "@providerGuards/*": ["projects/provider/src/app/core/guards/*"],
+      "@providerModels/*": ["projects/provider/src/app/core/models/*"],
+      "@providerPipes/*": ["projects/provider/src/app/core/pipes/*"],
+    },
     "declaration": false,
     "downlevelIteration": true,
     "experimentalDecorators": true,
