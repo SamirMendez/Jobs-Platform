@@ -16,4 +16,9 @@ export class AuthenticationService {
     return await {status: true};
   }
   // Metodo publico para iniciar la sesion de un usuario
+  // Metodo publico para cerrar la sesion de un usuario
+  public async logOut(): Promise<any> {
+    return await {status: true};
+  }
+  // Metodo publico para cerrar la sesion de un usuario
 }
