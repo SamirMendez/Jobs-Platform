@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { JobPipe } from '@providerPipes/jobs/job.pipe';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatExpansionModule } from '@angular/material/expansion';
 
 
 @NgModule({
@@ -13,13 +14,15 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatExpansionModule
   ],
   exports: [
     JobPipe,
     FormsModule,
     ReactiveFormsModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatExpansionModule
   ]
 })
 export class SharedModule { }
